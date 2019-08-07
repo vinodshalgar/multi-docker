@@ -9,6 +9,7 @@ script:
   - docker run vinodshalgar/react-test npm test -- --coverage
 
 after_success:
+  - echo "after success started"
   - docker build -t vinodshalgar/multi-client ./client
   - docker built -t vinodshalgar/multi-nginx ./nginx
   - docker built -t vinodshalgar/multi-server ./server
