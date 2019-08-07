@@ -11,8 +11,8 @@ script:
 after_success:
   - echo "after success started"
   - docker build -t vinodshalgar/multi-client ./client
-  - docker built -t vinodshalgar/multi-nginx ./nginx
-  - docker built -t vinodshalgar/multi-server ./server
+  - docker build -t vinodshalgar/multi-nginx ./nginx
+  - docker build -t vinodshalgar/multi-server ./server
   - docker build -t vinodshalgar/multi-worker ./worker
 
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
